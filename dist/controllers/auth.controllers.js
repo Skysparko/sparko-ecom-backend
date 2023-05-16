@@ -124,7 +124,7 @@ const login = async (req, res) => {
         res.cookie("bearerToken", bearerToken, {
             expires: (0, functions_1.getTimeInDays)(rememberMe ? 365 : 7),
             secure: true,
-            domain:process.env.CLIENT_APP_URL,
+            domain:".up.railway.app",
             sameSite: "none",
         });
         console.log(bearerToken);
