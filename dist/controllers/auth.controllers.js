@@ -64,7 +64,7 @@ const register = async (req, res) => {
         // signing a jwt token for the user
         const payload = { id: newUser._id };
         const verificationToken = jsonwebtoken_1.default.sign(payload, process.env.JWT_SECRET);
-        const verificationLink = `${process.env.CLIENT_APP_URL}/authentication/verification/?token=${verificationToken}`;
+        const verificationLink = `${process.env.CLIENT_APP_URL}/#/authentication/verification/?token=${verificationToken}`;
         const mailOptions = {
             from: "security@example.com",
             to: newUser.email,
@@ -166,7 +166,7 @@ const forgotPassword = async (req, res) => {
         const forgotToken = await jsonwebtoken_1.default.sign(payload, process.env.JWT_SECRET, {
             expiresIn: "24hr",
         });
-        const resetLink = `${process.env.CLIENT_APP_URL}/authentication/reset-password?token=${forgotToken}`;
+        const resetLink = `${process.env.CLIENT_APP_URL}/#/authentication/reset-password?token=${forgotToken}`;
         // email options configuration
         const mailOptions = {
             from: "security@example.com",
