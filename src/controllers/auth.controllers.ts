@@ -148,6 +148,8 @@ export const login = async (req: Request, res: Response) => {
 sameSite: "none",
     });
 
+console.log(bearerToken);
+
     //returning the token in the response
     return res.status(200).send("Login successful");
   } catch (error) {
