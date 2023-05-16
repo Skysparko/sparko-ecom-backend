@@ -24,7 +24,7 @@ app.use(express_1.default.urlencoded({ limit: "50mb", extended: true, parameterL
 app.use(express_1.default.text({ limit: "200mb" }));
 app.use((0, morgan_1.default)("dev"));
 app.use((0, cors_1.default)({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_APP_URL,
     credentials: true,
 }));
 app.use((0, cookie_parser_1.default)());
