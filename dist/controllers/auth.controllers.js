@@ -141,7 +141,9 @@ exports.login = login;
 //logic for logging out user
 const logout = (req, res) => {
     try {
-        res.clearCookie("bearerToken");
+        res.clearCookie("bearerToken",{  secure: true,
+      domain:".up.railway.app",
+sameSite: "none"});
         return res.status(200).send("Logout successfully");
     }
     catch (error) {
