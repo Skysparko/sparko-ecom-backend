@@ -123,6 +123,7 @@ const login = async (req, res) => {
         });
         res.cookie("bearerToken", bearerToken, {
             expires: (0, functions_1.getTimeInDays)(rememberMe ? 365 : 7),
+            secure: true,
         });
         //returning the token in the response
         return res.status(200).send("Login successful");
