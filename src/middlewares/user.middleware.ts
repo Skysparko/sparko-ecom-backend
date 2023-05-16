@@ -21,7 +21,7 @@ export const userEmailVerification = async (
     user.save();
     const payload = { id: user._id };
     const verificationToken = await jwt.sign(payload, process.env.JWT_SECRET!);
-    const verificationLink = `${process.env.CLIENT_APP_URL}/user?token=${verificationToken}`;
+    const verificationLink = `${process.env.CLIENT_APP_URL}/#/user?token=${verificationToken}`;
 
     const mailOptions = {
       from: "security@example.com",
