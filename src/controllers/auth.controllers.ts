@@ -162,7 +162,11 @@ console.log(bearerToken);
 //logic for logging out user
 export const logout = (req: Request, res: Response) => {
   try {
-    res.clearCookie("bearerToken");
+    res.clearCookie("bearerToken",{
+  secure: true,
+      domain:".up.railway.app",
+sameSite: "none"
+});
     return res.status(200).send("Logout successfully");
   } catch (error) {
     //returning the error message
