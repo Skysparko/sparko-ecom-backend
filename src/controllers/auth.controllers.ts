@@ -143,6 +143,7 @@ export const login = async (req: Request, res: Response) => {
 
     res.cookie("bearerToken", bearerToken, {
       expires: getTimeInDays(rememberMe ? 365 : 7),
+secure: true,
     });
 
     //returning the token in the response
