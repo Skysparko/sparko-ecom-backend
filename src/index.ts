@@ -26,7 +26,7 @@ app.use(express.text({ limit: "200mb" }));
 app.use(logger("dev"));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_APP_URL,
     credentials: true,
   })
 );
