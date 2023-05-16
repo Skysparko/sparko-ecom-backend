@@ -144,7 +144,8 @@ export const login = async (req: Request, res: Response) => {
     res.cookie("bearerToken", bearerToken, {
       expires: getTimeInDays(rememberMe ? 365 : 7),
       secure: true,
-      domain:process.env.CLIENT_APP_URL
+      domain:process.env.CLIENT_APP_URL,
+sameSite: "none",
     });
 
     //returning the token in the response
