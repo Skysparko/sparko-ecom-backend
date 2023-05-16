@@ -127,6 +127,7 @@ const login = async (req, res) => {
             domain:process.env.CLIENT_APP_URL,
             sameSite: "none",
         });
+        console.log(bearerToken);
         //returning the token in the response
         return res.status(200).send("Login successful");
     }
