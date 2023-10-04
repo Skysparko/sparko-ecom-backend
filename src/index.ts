@@ -26,7 +26,7 @@ app.use(express.text({ limit: "200mb" }));
 app.use(logger("dev"));
 app.use(
   cors({
-     origin: "https://sstore-ecom-frontend.onrender.com",
+     origin: process.env.CLIENT_APP_URL,
     credentials: true, // You may need this if your frontend sends credentials (e.g., cookies)
 exposedHeaders: ["Set-Cookie"],
   })
