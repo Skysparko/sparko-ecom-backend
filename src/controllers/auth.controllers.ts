@@ -144,8 +144,8 @@ export const login = async (req: Request, res: Response) => {
     res.cookie("bearerToken", bearerToken, {
       expires: getTimeInDays(rememberMe ? 365 : 7),
       secure: true,
-      domain:".up.railway.app",
-sameSite: "none",
+      domain:".onrender.com",
+      sameSite: "none",
     });
 
 console.log(bearerToken);
